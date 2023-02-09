@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-from random import randint
+import random
 import prompt
 
 
-def welcome_user():
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-
-
 def main():
+    print('Welcome to the Brain Games!')
     i = 0
     result = ''
+    name = prompt.string('May I have your name? ')
+    print(
+        f'Hello, {name}!\nAnswer "yes" if the number is even, '
+        'otherwise answer "no".'
+    )
     while i < 3:
         num = random.randint(1, 100)
         if num % 2 == 0:
