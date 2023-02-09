@@ -6,10 +6,11 @@ import prompt
 def welcome_user():
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
-    return(f'Hello, {name}!')
+    print(f'Hello, {name}!')
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    
-    def main():
+
+
+def main():
     i = 0
     result = ''
     while i < 3:
