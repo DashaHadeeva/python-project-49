@@ -16,7 +16,6 @@ def brain_calc():
         result = str(operator.add(number1, number2))
     elif operator_rand == '-':
         result = str(operator.sub(number1, number2))
-    else: 
+    else:
         result = str(operator.mul(number1, number2))
     return result, task, question
-    
