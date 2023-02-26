@@ -12,7 +12,7 @@ def brain_progression():
     result = str(progression[position])
     list_progr[position] = '..'
     collect = ''
-    for i in list_progr[:10]:
+    for i in list_progr(randint(5,10)):
         collect = collect + ' ' + str(i)
     question = f'Question: {collect}'
     task = 'What number is missing in the progression?'
