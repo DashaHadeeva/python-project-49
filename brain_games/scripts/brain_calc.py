@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-
-
 from brain_games.games.calc import brain_calc
 from brain_games.brain_engine import brain_run
 

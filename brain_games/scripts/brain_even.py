@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from brain_games.games.even import brain_even
 from brain_games.brain_engine import brain_run
 
