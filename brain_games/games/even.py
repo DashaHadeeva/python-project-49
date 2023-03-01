@@ -10,8 +10,8 @@ def brain_even():
     number = randint(1, 100)
     task = 'Answer "yes" if the number is even, otherwise answer "no".'
     question = f'Question: {number}'
-    unswer = is_even(number)
-    if unswer:
+    answer = is_even(number)
+    if answer:
         result = 'yes'
         return result, task, question
     else:
