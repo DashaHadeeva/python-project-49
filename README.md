@@ -8,7 +8,9 @@ python3 -m pip install --user git+https://github.com/DashaHadeeva/python-project
 Установите пакет и зависимости: 
 
 make install
+
 make build
+
 make package-install
 
 ### "Игры Разума"
