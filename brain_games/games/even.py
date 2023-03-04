@@ -1,15 +1,15 @@
 from random import randint
 
 
-def is_even(number):
-    return number % 2 == 0
+def is_even(random_number):
+    return random_number % 2 == 0
 
 
 def brain_even():
-    number = randint(1, 100)
+    random_number = randint(1, 100)
     task = 'Answer "yes" if the number is even, otherwise answer "no".'
-    question = f'Question: {number}'
-    answer = is_even(number)
+    question = f'Question: {random_number}'
+    answer = is_even(random_number)
     if answer:
         result = 'yes'
         return result, task, question
