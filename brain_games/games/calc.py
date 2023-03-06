@@ -1,6 +1,5 @@
 from random import randint
 from random import choice
-import operator
 
 
 GAME_RULE = 'What is the result of the expression?'
