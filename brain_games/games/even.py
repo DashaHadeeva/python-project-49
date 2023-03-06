@@ -1,18 +1,20 @@
 from random import randint
 
 
+GAME_RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
+
+
 def is_even(random_number):
     return random_number % 2 == 0
 
 
-def brain_even():
+def get_game():
     random_number = randint(1, 100)
-    task = 'Answer "yes" if the number is even, otherwise answer "no".'
-    question = f'Question: {random_number}'
+    question = f'{random_number}'
     answer = is_even(random_number)
     if answer:
-        result = 'yes'
-        return result, task, question
+        right_answer = 'yes'
+        return question, right_answer
     else:
-        result = 'no'
-        return result, task, question
+        right_answer = 'no'
+        return question, right_answer

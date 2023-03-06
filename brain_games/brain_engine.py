@@ -1,22 +1,35 @@
 import prompt
 
 
-def brain_run(game_logic):
+ROUNDS = 3
+
+
+def get_welcome(game_rule):
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    res = game_logic()
-    print(res[1])
-    n = 3
-    while n >= 1:
-        n -= 1
-        res = game_logic()
-        print(res[2])
-        ans = prompt.string('Your answer: ')
-        if ans == res[0]:
+    print(game_rule)
+    return name
+
+
+def get_question(question):
+    print(f'Question: {question}')
+    ans = prompt.string('Your answer: ')
+    return ans
+
+
+def get_start_game(game):
+    game_rule = game.GAME_RULE
+    name = get_welcome(game_rule)
+    for _ in range(ROUNDS):
+        question, right_answer = game.get_game()
+        user_answer = get_question(question)
+        if user_answer == str(right_answer):
             print('Correct!')
         else:
-            print(f"'{ans}' is wrong answer ;(. Correct answer was '{res[0]}'.")
+            print(f"'{user_answer}' is wrong answer ;(. "
+                  f"Correct answer was '{right_answer}'.")
             print(f"Let's try again, {name}!")
-            return
-    print(f'Congratulations, {name}!')
+            break
+    else:
+        print(f'Congratulations, {name}!')

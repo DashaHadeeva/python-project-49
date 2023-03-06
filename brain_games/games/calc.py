@@ -3,17 +3,16 @@ from random import choice
 import operator
 
 
-def brain_calc():
-    number1 = randint(10, 100)
-    number2 = randint(1, 10)
-    operator_str = ['+', '-', '*']
-    operator_rand = choice(operator_str)
-    task = 'What is the result of the expression?'
-    question = f'Question: {number1} {operator_rand} {number2}'
-    if operator_rand == '+':
-        result = str(operator.add(number1, number2))
-    elif operator_rand == '-':
-        result = str(operator.sub(number1, number2))
-    else:
-        result = str(operator.mul(number1, number2))
-    return result, task, question
+GAME_RULE = 'What is the result of the expression?'
+OPERATORS = {'+': lambda num1, num2: num1 + num2,
+             '-': lambda num1, num2: num1 - num2,
+             '*': lambda num1, num2: num1 * num2}
+
+
+def get_game():
+    num1 = randint(10, 100)
+    num2 = randint(1, 10)
+    operator_rand = choice([*OPERATORS])
+    right_answer = OPERATORS[operator_rand](num1, num2)
+    question = f'{num1} {operator_rand} {num2}'
+    return question, right_answer

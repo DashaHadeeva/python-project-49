@@ -2,6 +2,9 @@ from random import randint
 from math import sqrt
 
 
+GAME_RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+
 def is_not_prime(number):
     i = 1
     if number == 2:
@@ -13,14 +16,12 @@ def is_not_prime(number):
     return number % i == 0
 
 
-def brain_prime():
+def get_game():
     number = randint(1, 1000)
-    task = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-    question = f'Question: {number}'
+    question = f'{number}'
     answer = is_not_prime(number)
     if answer:
-        result = 'no'
-        return result, task, question
+        right_answer = 'no'
     else:
-        result = 'yes'
-        return result, task, question
+        right_answer = 'yes'
+    return question, right_answer
